@@ -18,14 +18,18 @@ const App = () => {
       console.log('res', res.data.results)
     })
   }, [])
-
+if(!data){
+  return <h1>Loading</h1>
+}else{
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
-      <StarWars name={data.name} />
-      {/* { data.results.map(x => { return <StarWars name={data.name} /> })  } */}
+      {/* <StarWars name={data.name} /> */}
+      { data.map(x => <StarWars name={x.name} height={x.height} /> )  }
     </div>
   );
+}
+  
 }
 
 export default App;
