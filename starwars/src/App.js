@@ -19,13 +19,13 @@ const App = () => {
     })
   }, [])
 if(!data){
-  return <h1>Loading</h1>
+  return <h1 className='loading'>Loading...</h1>
 }else{
   return (
     <div className="App">
       <h1 className="Header">React Wars</h1>
       {/* <StarWars name={data.name} /> */}
-      { data.map(x => <StarWars name={x.name} height={x.height} /> )  }
+      { data.map(x => <StarWars name={x.name} height={x.height} mass={x.mass} hair_color={x.hair_color} skin_color={x.skin_color} /> )  }
     </div>
   );
 }
